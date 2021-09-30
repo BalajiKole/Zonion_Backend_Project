@@ -37,12 +37,20 @@ public class RestaurantController {
 	private RestaurantRepository restaurantRepo;
 
 	@PostMapping("/add")
-	public ResponseEntity<Restaurant> addRestaurant(@RequestBody Restaurant resto) {
+	public Restaurant addRestaurant(@RequestBody Restaurant resto) {
 		System.out.println(" In post of resto :  " + resto);
 		Restaurant rest = restaurantService.addResto(resto);
 
-		return new ResponseEntity<Restaurant>(rest, HttpStatus.OK);
+		return rest;
 	}
+	/*
+	 * @PostMapping("/add") public ResponseEntity<Restaurant>
+	 * addRestaurant(@RequestBody Restaurant resto) {
+	 * System.out.println(" In post of resto :  " + resto); Restaurant rest =
+	 * restaurantService.addResto(resto);
+	 * 
+	 * return new ResponseEntity<Restaurant>(rest, HttpStatus.OK); }
+	 */
 
 	@GetMapping("/show/{id}")
 	public Optional<Restaurant> getById(@PathVariable Long id) {
