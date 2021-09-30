@@ -26,6 +26,7 @@ import com.demo.aparna.project.repository.RestaurantRepository;
 import com.demo.aparna.project.service.RestaurantService;
 
 //@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping({ "/data" })
 public class RestaurantController {
